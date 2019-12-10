@@ -8,27 +8,27 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
 
 
+    var random:Int = 1
+
+    var drawableResource: Int = 1
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-
-
         button.setOnClickListener {
-
             rollDice()
-
-
 
         }
 
     }
 
     private fun rollDice() {
-        val random = (1..6).random()
-        val drawbleResource =  when(random){
+        random = (1..6).random()
+      drawableResource =  when(random){
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
 
-        imageView.setImageResource(drawbleResource)
+        imageView.setImageResource(drawableResource)
 
         textView.text = random.toString()
     }
